@@ -7,7 +7,7 @@ const { Server } = require('http');
 const { authMiddleware } = require('./utils/auth');
 
 const app = express();
-//const PORT = process.env.PORT || 3009;
+const PORT = process.env.PORT || 3009;
 
 const { typeDefs, resolvers } = require('./Schemas');
 
