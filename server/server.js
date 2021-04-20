@@ -4,12 +4,12 @@ const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
 const { Server } = require('http');
+const { authMiddleware } = require('./utils/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3009;
 
-// integrate Apollo server with the express application as middleware
-Server.applyMiddleware({ app });
+const { typeDefs, resolvers } = require('./Schemas');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
